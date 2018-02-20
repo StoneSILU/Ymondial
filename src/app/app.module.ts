@@ -11,6 +11,7 @@ import { SpecialContentComponent } from './special-content/special-content.compo
 import { FooterComponent } from './footer/footer.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
+import { ProfilPageComponent } from './profil-page/profil-page.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     SpecialContentComponent,
     FooterComponent,
     LoginPageComponent,
-    InscriptionPageComponent
+    InscriptionPageComponent,
+    ProfilPageComponent
   ],
   imports: [
     BrowserModule

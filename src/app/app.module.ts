@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     CadreMatchAccueilComponent,
     SpecialContentComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule

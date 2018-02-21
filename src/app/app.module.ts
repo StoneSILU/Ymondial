@@ -12,12 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
-	{ path: '/accueil', component: AccueilPageComponent },
-
-
-
-
-]
+  { path: 'accueil', component: AccueilPageComponent },
+  { path: '**', redirectTo: 'accueil' }
+];
 
 @NgModule({
   declarations: [
@@ -30,7 +27,8 @@ const appRoutes: Routes = [
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

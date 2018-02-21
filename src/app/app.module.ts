@@ -9,14 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { CadreMatchAccueilComponent } from './cadre-match-accueil/cadre-match-accueil.component';
 import { SpecialContentComponent } from './special-content/special-content.component';
 import { FooterComponent } from './footer/footer.component';
+import {PronoPageComponent} from "./prono-page/prono-page.component";
 
 
 const appRoutes: Routes = [
 	{ path: '/accueil', component: AccueilPageComponent },
-
-
-
-
+    { path: '/prono', component: PronoPageComponent },
 ]
 
 @NgModule({
@@ -27,6 +25,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     CadreMatchAccueilComponent,
     SpecialContentComponent,
+    PronoPageComponent,
     FooterComponent
   ],
   imports: [

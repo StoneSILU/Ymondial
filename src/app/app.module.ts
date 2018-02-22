@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CadreMatchAccueilComponent } from './cadre-match-accueil/cadre-match-accueil.component';
 import { SpecialContentComponent } from './special-content/special-content.component';
 import { FooterComponent } from './footer/footer.component';
+import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
 
 
 const appRoutes: Routes = [
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     CadreMatchAccueilComponent,
     SpecialContentComponent,
-    FooterComponent
+    FooterComponent,
+    MiniClassementAccueilComponent
   ],
   imports: [
     BrowserModule

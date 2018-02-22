@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <app-header></app-header>
-<body>
-
 
 <app-menu></app-menu>
 <app-special-content></app-special-content>
-  
-<app-cadre-match-accueil></app-cadre-match-accueil>
-<app-footer></app-footer>
+ 
+ <div class="container-fluid bg-3 text-center">    
+  <h3>Les rencontres à venir</h3><br>
+  <div class="row">
+    <div class="w3-col m8"> 
+		<app-cadre-match-accueil></app-cadre-match-accueil>
+	</div>
+		<div class="col-sm-4">
+    		<app-mini-classement-accueil></app-mini-classement-accueil>
+  		</div>
+</div>
+</div><br>
+<app-footer></app-footer><!-- commentaire -->
 
-</body>
-</html>

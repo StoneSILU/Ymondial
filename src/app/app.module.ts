@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AccueilPageComponent } from './accueil-page/accueil-page.component';
@@ -13,12 +15,10 @@ import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-c
 
 
 const appRoutes: Routes = [
-	{ path: '/accueil', component: AccueilPageComponent },
+  { path: 'accueil', component: AccueilPageComponent },
+  { path: '**', redirectTo: 'accueil' },
+];
 
-
-
-
-]
 
 @NgModule({
   declarations: [

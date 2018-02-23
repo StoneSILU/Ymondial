@@ -1,21 +1,16 @@
-<div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    <div class="w3-card w3-round w3-center" style="padding-bottom:20px;" >
+        <div class="w3-container">
+            <div class="col-sm-3" *ngFor="let match of rencontres">
+              <br>
+                    <br>
+                    <p>{{match.equipe1_id.nom}} - {{match.equipe2_id.nom}}</p>
+                    <p> {{match.date}}</p>
+                    <form action="pronostic.html">
+                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
+                      </form>    
+            </div>
+        </div>
     </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br>
+
+      
+ 

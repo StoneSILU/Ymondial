@@ -8,10 +8,13 @@ import { CadreMatchAccueilComponent } from './cadre-match-accueil/cadre-match-ac
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SpecialContentComponent } from './special-content/special-content.component';
-
 import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
 
+import { ApiService } from './Services/Api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
@@ -33,8 +36,10 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

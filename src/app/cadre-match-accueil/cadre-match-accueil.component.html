@@ -1,62 +1,13 @@
     <div class="w3-card w3-round w3-center" style="padding-bottom:20px;" >
         <div class="w3-container">
-            <div class="col-sm-3">
+            <div class="col-sm-3" *ngFor="let match of rencontres">
               <br>
                     <br>
-                    <p>FRANCE - ALLEMAGNE</p>
-                    <p> 22/06/2018 </p>
+                    <p>{{match.equipe1_id.nom}} - {{match.equipe2_id.nom}}</p>
+                    <p> {{match.date}}</p>
                     <form action="pronostic.html">
                         <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
                       </form>    
-            </div>
-
-
-            <div class="col-sm-3"> 
-               <br>
-                    <br>
-                    <p>PORTUGAL - CROATIE</p>
-                    <p> 23/06/2018 </p>
-                    <form action="pronostic.html">
-                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                    </form>
-              </div>
-
-
-            <div class="col-sm-3"> 
-               <br>
-                    <br>
-                    <p>ANGLETERRE - BRÉSIL</p>
-                    <p> 25/06/2018 </p>
-                    <form action="pronostic.html">
-                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                    </form>
-                  </div>
-            <div class="col-sm-3">
-              <br>
-                    <br>
-                    <p>ALGERIE - TOGO</p>
-                    <p> 26/06/2018 </p>
-                    <form action="pronostic.html">
-                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                    </form>
-            </div>
-            <div class="col-sm-3">
-              <br>
-                    <br>
-                    <p>ALLEMAGNE - CROATIE</p>
-                    <p> 27/06/2018 </p>
-                    <form action="pronostic.html">
-                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                    </form>
-            </div>
-            <div class="col-sm-3">
-              <br>
-                    <br>
-                    <p>FRANCE - PORTUGAL</p>
-                    <p> 28/06/2018 </p>
-                    <form action="pronostic.html">
-                        <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                    </form>
             </div>
         </div>
     </div>

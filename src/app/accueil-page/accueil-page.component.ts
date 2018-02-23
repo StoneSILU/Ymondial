@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/Api/api.service';
 
 @Component({
   selector: 'app-accueil-page',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accueil-page.component.css']
 })
 export class AccueilPageComponent implements OnInit {
-
-  constructor() { }
+  title = 'Prono Football School';
+  constructor(private api: ApiService) {
+    this.api.fetch('get', 'equipes', null)
+      .then(res => {
+        console.log('response');
+      });
+  }
 
   ngOnInit() {
   }

@@ -7,12 +7,8 @@ import { ApiService } from '../Services/Api/api.service';
   styleUrls: ['./accueil-page.component.css']
 })
 export class AccueilPageComponent implements OnInit {
-  title = 'Prono Football School';
+title = 'Prono Football School';
   constructor(private api: ApiService) {
-    this.api.fetch('get', 'equipes', null)
-      .then(res => {
-        console.log('response');
-      });
   }
 
   ngOnInit() {

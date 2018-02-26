@@ -1,41 +1,33 @@
+    <div class="w3-card w3-round w3-center" style="padding-bottom:20px;" >
+        <div class="w3-container">
+            <div class="col-sm-3" *ngFor="let match of rencontres">
+              <br>
+                    <br>
+                    <table class="cadreMatch w3-center">
+                        <tr>
+                            <td class="w3-center"><img src="../../assets/petite{{match.equipe1_id.drapeau}}"></td>
+                            <td>&nbsp;</td>
+                            <td class="w3-center"><img src="../../assets/petite{{match.equipe2_id.drapeau}}"></td>
+                        </tr>
+                        <tr>
+                            <td class="w3-center">{{match.equipe1_id.nom}}</td>
+                            <th class="w3-center">{{match.goals1}} - {{match.goals2}}</th>
+                            <td class="w3-center">{{match.equipe2_id.nom}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Le {{match.date | date:"dd/MM/yyyy 'à' h:mm" }}</td>
+                        </tr>
+                        <tr>
+                            <th class="w3-center" colspan="3">
+                                <form action="pronostic.html">
+                                    <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
+                                  </form> 
+                            </th>
+                        </tr>
+                    </table>   
+            </div>
+        </div>
+    </div>
 
-        <p><b>Les rencontres à venir</b></p>
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-quarter w3-center" style="border: 1px solid;margin: 0px;">
-            <br>
-            <br>
-            <p>FRANCE - ALLEMAGNE</p>
-            <p> 22/06/2018 </p>
-            <form action="pronostic.html">
-                <input type="submit" value="Pronostiquer" />
-              </form>
-          </div>    
-          <div class="w3-quarter w3-center" style="border: 1px solid;">
-            <br>
-            <br>
-            <p>FRANCE - ALLEMAGNE</p>
-            <p> 22/06/2018 </p>
-            <form action="pronostic.html">
-                <input type="submit" value="Pronostiquer" />
-            </form>
-          </div>
-          <div class="w3-quarter w3-center" style="border: 1px solid;">
-            <br>
-            <br>
-            <p>FRANCE - ALLEMAGNE</p>
-            <p> 22/06/2018 </p>
-            <form action="pronostic.html">
-                <input type="submit" value="Pronostiquer" />
-            </form>
-          </div>
-          <div class="w3-quarter w3-center" style="border: 1px solid;">
-            <br>
-            <br>
-            <p>FRANCE - ALLEMAGNE</p>
-            <p> 22/06/2018 </p>
-            <form action="pronostic.html">
-                <input type="submit" value="Pronostiquer" />
-            </form>
-          </div>
+      
  
-           

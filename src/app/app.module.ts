@@ -11,6 +11,7 @@ import { SpecialContentComponent } from './special-content/special-content.compo
 import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RankingPageComponent } from './ranking-page/ranking-page.component';
 
 import { ApiService } from './Services/Api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
+  { path: 'classement', component: RankingPageComponent},
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     InscriptionPageComponent,
     LoginPageComponent,
+    RankingPageComponent,
     
   ],
   imports: [

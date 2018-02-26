@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,20 +12,29 @@ export class LoginPageComponent implements OnInit {
   
   email:string;
   password:string;
-  constructor(private api: ApiService) {
+  connexion;
+  isVisible:boolean;
+  constructor(private api: ApiService, private router: Router) {
     
 
 
    }
 
    login(){
-     console.log("email " + this.email);
-     console.log("password " + this.password);
      this.api.fetch('post', 'auth/login', {email: this.email, password: this.password})
     .then(res => {
+      this.connexion = res;
+      console.log(this.connexion.success);
       console.log(res);
-      
+      if (this.connexion.success == true){
+        this.router.navigate(['/']);
+        this.isVisible = false;
+      } else {
+        this.isVisible = true;
+      }
     });
+      
+    
    }
 
   ngOnInit() {

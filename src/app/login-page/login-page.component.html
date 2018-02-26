@@ -6,7 +6,7 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
+                <span [style.visibility]="isVisible ? 'visible' : 'hidden'" style="color:red"> Vos identifiants sont inccorects</span>
                 <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus [(ngModel)]="email">
                 <input type="password" name="password" class="form-control" placeholder="Password" required [(ngModel)]="password">
                 <div id="remember" class="checkbox">
@@ -14,10 +14,10 @@
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button (click)='login()' class="btn btn-lg btn-primary btn-block btn-signin">Sign in</button>
+                <button (click)='login()' class="btn btn-lg btn-primary btn-block btn-signin">connexion</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
                 Forgot the password?
             </a>
-        </div><!-- /card-container -->
+        </div>
     </div><!-- /container -->

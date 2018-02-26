@@ -1,0 +1,48 @@
+<app-header></app-header>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+            <form class="form-horizontal" role="form">
+                <h2>Inscription</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Nom</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Nom, Prenom" class="form-control" autofocus>
+                        <span class="help-block">Nom, Prenom ex.: Zidane, Zinedine</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Mot de passe</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="Mot de passe" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date de naissance</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">I accept <a href="#">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+        <app-footer></app-footer> 

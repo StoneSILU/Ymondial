@@ -11,7 +11,7 @@ export class ApiService {
     const promise = new Promise((resolve, reject) => {
       const apiUrl = `${this.apiRoot}${url}`;
 
-      this.http[verb](apiUrl)
+      this.http[verb](apiUrl,verb.toUpperCase() == 'POST' ? data : '')
         .subscribe(res => {
           resolve(res);
         }, err => {

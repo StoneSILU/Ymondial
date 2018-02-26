@@ -9,15 +9,20 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SpecialContentComponent } from './special-content/special-content.component';
 import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
+import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 import { ApiService } from './Services/Api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
+  { path: 'inscription', component: InscriptionPageComponent },
+  { path: 'login', component: LoginPageComponent},
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -31,13 +36,17 @@ const appRoutes: Routes = [
     MiniClassementAccueilComponent,
     SpecialContentComponent,
     HeaderComponent,
+    InscriptionPageComponent,
+    LoginPageComponent,
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

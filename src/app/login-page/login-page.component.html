@@ -1,12 +1,12 @@
- <app-header></app-header>
+
     <div class="container">
-        <div class="card">
+        <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-horizontal" role="form">
                     <h2 class="w3-center">Connexion</h2>
-                    
+                    <span class="w3-center" [style.visibility]="isVisible ? 'visible' : 'hidden'" style="color:red"> Informations incorrectes</span>
                     <div class="form-group">
                         <label for="email" class="col-sm-3 control-label">Email</label>
                         <div class="col-sm-9">

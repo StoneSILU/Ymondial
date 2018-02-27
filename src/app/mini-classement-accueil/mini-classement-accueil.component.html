@@ -13,11 +13,12 @@
 			</thead>
 
 			<tbody class="points_table_scrollbar">
-				<tr class="odd" *ngFor="let user of utilisateurs;let i = index;">
+				<tr class="odd" *ngFor="let user of top10;let i = index;">
 					<td class="col-xs-1">{{i+1}}</td>
 					<td class="col-xs-7">{{user.prenom}} {{user.nom}}</td>
 					<td class="col-xs-1">{{user.points}}</td>
 				</tr>
 			</tbody>
-			<th class="w3-center" colspan="3">  <a href="" style="color:black;">Voir le classement général</a></th>
+			<th class="w3-center" colspan="3">  <a href="/classement" style="color:black;">Voir le classement général</a></th>
 		</table>
+		</div>

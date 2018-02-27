@@ -40,8 +40,7 @@ const appRoutes: Routes = [
     SpecialContentComponent,
     InscriptionPageComponent,
     LoginPageComponent,
-    RankingPageComponent,
-    
+    RankingPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,8 @@
 .cadre{
 	border: 1px solid;
-	padding: 15px;
-	width: 21%;
+	margin-bottom: 15px;
 }
 
-.cadreGeneral {
-	width: 70%;
-	margin-left: 0px;
-	margin-right: 0px;
-	padding-left: 20px;
+.cadreMatch{
+	font-style: normal;
 }

@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MaLigueComponent } from './ma-ligue/ma-ligue.component';
 
 
 const appRoutes: Routes = [
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     SpecialContentComponent,
     InscriptionPageComponent,
     LoginPageComponent,
-    RankingPageComponent
+    RankingPageComponent,
+    MaLigueComponent
   ],
   imports: [
     BrowserModule,

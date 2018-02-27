@@ -1,0 +1,22 @@
+
+<div class="w3-card w3-round w3-center" >
+      
+  <table class="points_table w3-center">
+  <thead>
+    <th class="w3-center" colspan="3"> <p><b> Ma ligue d'amis</b></p></th>
+    <tr>
+      <th class="col-xs-1 w3-center">Rang</th>
+      <th class="col-xs-7 w3-center">Nom</th>
+      <th class="col-xs-1 w3-center">Points</th>
+    </tr>
+  </thead>
+
+  <tbody class="points_table_scrollbar">
+    <tr class="odd" *ngFor="let user of top10;let i = index;">
+      <td class="col-xs-1">i+1</td>
+      <td class="col-xs-7">user.prenom user.nom</td>
+      <td class="col-xs-1">user.points</td>
+    </tr>
+  </tbody>
+</table>
+</div>

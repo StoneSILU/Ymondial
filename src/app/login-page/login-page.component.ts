@@ -16,8 +16,6 @@ export class LoginPageComponent implements OnInit {
   isVisible:boolean;
   constructor(private api: ApiService, private router: Router) {
     
-
-
    }
 
    login(){

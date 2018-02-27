@@ -6,9 +6,9 @@ import { AccueilPageComponent } from './accueil-page/accueil-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadreMatchAccueilComponent } from './cadre-match-accueil/cadre-match-accueil.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { SpecialContentComponent } from './special-content/special-content.component';
 import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
@@ -36,8 +36,8 @@ const appRoutes: Routes = [
     CadreMatchAccueilComponent,
     FooterComponent,
     MiniClassementAccueilComponent,
+    AdminPageComponent,
     SpecialContentComponent,
-    HeaderComponent,
     InscriptionPageComponent,
     LoginPageComponent,
     RankingPageComponent,

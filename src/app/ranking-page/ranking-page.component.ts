@@ -16,6 +16,10 @@ export class RankingPageComponent implements OnInit {
     })
   }
 
+  addGroupe(id){
+    
+  }
+
   ngOnInit() {
   }
 

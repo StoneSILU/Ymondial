@@ -13,18 +13,20 @@
 			<thead>
 				<tr>
 					<th class="col-xs-1">Rang</th>
-					<th class="col-xs-7">Nom</th>
+					<th class="col-xs-5">Nom</th>
 					<th class="col-xs-1">Victoires</th>
-					<th class="col-xs-3">Points</th>
+					<th class="col-xs-2">Points</th>
+					<th class="col-xs-3">Actions</th>
 				</tr>
 			</thead>
 
 			<tbody class="points_table_scrollbar">
 				<tr class="odd" *ngFor="let user of utilisateurs;let i = index;">
 					<td class="col-xs-1">{{i+1}}</td>
-					<td class="col-xs-7">{{user.prenom}}</td>
-					<td class="col-xs-1">{{user.nom}}</td>
-					<td class="col-xs-3">{{user.points}}</td>
+					<td class="col-xs-5">{{user.prenom}} {{user.nom}}</td>
+					<td class="col-xs-1">{{user.__v}}</td>
+					<td class="col-xs-2">{{user.points}}</td>
+					<td class="col-xs-3"><button (click)="addGroupe()">Ajouter à ma liste d'ami</button></td>
 				</tr>
 			</tbody>
 		</table>

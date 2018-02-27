@@ -7,17 +7,6 @@ import { ApiService } from '../Services/Api/api.service';
   styleUrls: ['./cadre-match-accueil.component.css']
 })
 export class CadreMatchAccueilComponent implements OnInit {
-<<<<<<< HEAD
-	rencontres: any;
-
-  constructor(private api: ApiService) { 
-  
-    this.api.fetch('get', 'matchs', null)
-    .then((res: any) => {
-        (res.data) ? this.rencontres = res.data : this.rencontres = [];
-        console.log(this.rencontres);
-    });
-=======
   rencontres: any;
 
   constructor(private api: ApiService) {
@@ -26,7 +15,6 @@ export class CadreMatchAccueilComponent implements OnInit {
           (res.data) ? this.rencontres = res.data : this.rencontres = [];
           console.log(this.rencontres);
       });
->>>>>>> master
 
   }
 

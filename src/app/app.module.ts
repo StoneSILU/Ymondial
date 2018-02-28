@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AccueilPageComponent } from './accueil-page/accueil-page.component';
@@ -54,7 +55,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService,{provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

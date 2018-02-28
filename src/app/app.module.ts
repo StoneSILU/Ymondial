@@ -19,13 +19,14 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MaLigueComponent } from './ma-ligue/ma-ligue.component';
-
+import { ResultatPageComponent } from './resultat-page/resultat-page.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
   { path: 'classement', component: RankingPageComponent},
+  { path: 'resultat', component: ResultatPageComponent},
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     InscriptionPageComponent,
     LoginPageComponent,
     RankingPageComponent,
-    MaLigueComponent
+    MaLigueComponent,
+    ResultatPageComponent,
   ],
   imports: [
     BrowserModule,

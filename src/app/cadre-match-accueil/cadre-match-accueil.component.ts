@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cadre-match-accueil',
@@ -20,6 +21,10 @@ export class CadreMatchAccueilComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  createUrl(path,id=""){
+    return path+id;
   }
 
 

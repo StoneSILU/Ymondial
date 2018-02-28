@@ -13,17 +13,19 @@ import { InscriptionPageComponent } from './inscription-page/inscription-page.co
 import { LoginPageComponent } from './login-page/login-page.component';
 
 import { ApiService } from './Services/Api/api.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PronoPageComponent } from './prono-page/prono-page.component';
 
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
-  { path: '**', redirectTo: 'accueil' },
+  { path: 'prono/:id', component: PronoPageComponent},
+  { path: '**', redirectTo: 'accueil' }
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     MenuComponent,
     CadreMatchAccueilComponent,
     FooterComponent,
+    PronoPageComponent,
     MiniClassementAccueilComponent,
     AdminPageComponent,
     SpecialContentComponent,
@@ -42,7 +45,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
     HttpModule,
     HttpClientModule,
     FormsModule

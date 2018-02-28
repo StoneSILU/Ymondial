@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
+import { User } from '../Classes/user';
 
 @Component({
   selector: 'app-mini-classement-accueil',
@@ -7,20 +8,10 @@ import { ApiService } from '../Services/Api/api.service';
   styleUrls: ['./mini-classement-accueil.component.css']
 })
 export class MiniClassementAccueilComponent implements OnInit {
-  utilisateurs;
-  top10 :any[] = [];
-  constructor(private api: ApiService) { 
-    this.api.fetch('get','utilisateurs',null)
-    .then(res => {
-      this.utilisateurs = res;
-      for(let i = 0; i< 10; i++)
-      {     
-        this.top10[i] = this.utilisateurs[i];
-      }
-    })
-  }
-
+  @Input() name: string;
+  @Input() data: Array<User>;
   ngOnInit() {
+    console.log('name : ' + name);
   }
 
 }

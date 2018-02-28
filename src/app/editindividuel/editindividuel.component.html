@@ -1,0 +1,86 @@
+<app-menu></app-menu>
+
+<div class="jumbotron">
+  
+  <div class="container text-center"> 
+
+
+     <h3>Modification du match</h3>
+
+      
+     
+     <td>&nbsp;</td>                                
+      <div class="container text-center">
+          <label class="container text-center">Equipe 1   -   Equipe 2</label>
+
+          <div class="w3-center">
+              <img src="../../assets/moyenne{{equipe1_drapeau}}">
+              
+              <img src="../../assets/moyenne{{equipe2_drapeau}}">
+              </div>
+              <td>&nbsp;</td> 
+               <input type="text" class="w7-center" value="{{equipe1_nom}}" class ="btn btn-default btn-sm">
+               
+               <input type="text" class="w7-center" value="{{equipe2_nom}}" class="btn btn-default btn-sm">
+               
+          
+      </div>
+      <br>
+      <div class="container text-center">
+            <input type="number" class="w3-center" value="{{matchs.goals1}}" class ="btn btn-default btn-sm">
+            <input type="number" class="w3-center" value="{{matchs.goals2}}" class ="btn btn-default btn-sm">
+      </div>
+      <br>
+      <div class="container text-center">      
+            <input type="text" class="w3-center" value="{{matchs.date}}">
+      </div>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--     <td>&nbsp;</td>
+<div class="w3-card w3-round w3-center" style="padding-bottom:20px;" >
+    <div class="w3-container">
+        <div class="col-sm-3" *ngFor="let match of matchs">
+          <br>
+                <br>
+                <table class="cadreMatch w3-center">
+                    <tr>
+                        <td class="w3-center"><img src="../../assets/petite{{match.equipe1_id.drapeau}}"></td>
+                        <td>&nbsp;</td>
+                        <td class="w3-center"><img src="../../assets/petite{{match.equipe2_id.drapeau}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="w3-center">{{match.equipe1_id.nom}}</td>
+                        <th class="w3-center">{{match.goals1}} - {{match.goals2}}</th>
+                        <td class="w3-center">{{match.equipe2_id.nom}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Le {{match.date | date:"MM/dd/yyyy 'à' h:mm" }}</td>
+                    </tr>
+                    <tr>
+                        <th class="w3-center" colspan="3">
+                            <form action="pronostic.html">
+                                <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
+                              </form> 
+                        </th>
+                    </tr>
+                </table>   
+        </div>
+    </div>
+</div>
+</div>
+</div> -->

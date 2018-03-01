@@ -15,6 +15,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
+import { NewmatchPageComponent } from './newmatch-page/newmatch-page.component';
 import { PronoPageComponent } from './prono-page/prono-page.component';
 import { EditmatchComponent } from './editmatch/editmatch.component';
 import { EditindividuelComponent } from './editindividuel/editindividuel.component';
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
   { path: 'classement', component: RankingPageComponent },
   { path: 'resultat', component: ResultatPageComponent },
   { path: 'prono/:id', component: PronoPageComponent },
+  { path: 'admin', component: AdminPageComponent },
+  // { path: 'newmatch', component: NewmatchPageComponent },
+  { path: 'editindividuel/:id', component: EditindividuelComponent },
+  { path: 'editmatch', component: EditmatchComponent },
   { path: '**', redirectTo: 'accueil' },
 ];
 

@@ -16,11 +16,12 @@ import { InscriptionPageComponent } from './inscription-page/inscription-page.co
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
 import { PronoPageComponent } from './prono-page/prono-page.component';
+import { EditmatchComponent } from './editmatch/editmatch.component';
+import { EditindividuelComponent } from './editindividuel/editindividuel.component';
 
 import { TokenInterceptor } from './Services/Interceptors/token.interceptor';
 import { AuthenticationService } from './Services/Authentication/authentication.service';
 import { ApiService } from './Services/Api/api.service';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -51,6 +52,8 @@ const appRoutes: Routes = [
     LoginPageComponent,
     RankingPageComponent,
     ResultatPageComponent,
+    EditindividuelComponent,
+    EditmatchComponent
   ],
   imports: [
     BrowserModule,

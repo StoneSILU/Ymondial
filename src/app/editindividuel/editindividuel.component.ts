@@ -47,7 +47,7 @@ export class EditindividuelComponent implements OnInit {
         this.equipes = res.data;
 
         console.log(this.equipes);
-        for (const element of this.equipes){
+        for(const element of this.equipes){
           if (this.matchs.equipe1_id === element._id) {
             this.equipe1_nom = element.nom;
           }
@@ -56,8 +56,7 @@ export class EditindividuelComponent implements OnInit {
           }
         }
 
-        console.log(this.equipes);
-        for (const element of this.equipes) {
+        for (const element of this.equipes){
           if (this.matchs.equipe1_id === element._id) {
             this.equipe1_drapeau = element.drapeau;
           }
@@ -68,7 +67,7 @@ export class EditindividuelComponent implements OnInit {
     });
   }
 
- deleteClick() {
+  deleteClick() {
     this.api.fetch('delete', 'matchs/' + this.match_id, { id: this.match_id })
       .then((res: any ) => {
        });

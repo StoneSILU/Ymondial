@@ -20,8 +20,8 @@ export class LoginPageComponent implements OnInit {
 
    login(){
      this.api.fetch('post', 'auth/login', {email: this.email, password: this.password})
-    .then(res => {
-      this.connexion = res;
+    .then((res: any) => {
+      this.connexion = res.data;
       console.log(this.connexion.success);
       console.log(res);
       if (this.connexion.success == true){

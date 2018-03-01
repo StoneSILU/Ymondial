@@ -12,11 +12,16 @@ export class CadreMatchAccueilComponent implements OnInit {
   constructor(private api: ApiService) {
    this.api.fetch('get', 'matchs', null)
       .then((res: any) => {
-          this.rencontres = res;
+          (res.data) ? this.rencontres = res.data : this.rencontres = [];
+          console.log(this.rencontres);
       });
      }
 
   ngOnInit() {
 
   }
+  createUrl(path,id=""){
+    return path+id;
+  }
+
 }

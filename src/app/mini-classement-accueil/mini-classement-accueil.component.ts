@@ -11,8 +11,8 @@ export class MiniClassementAccueilComponent implements OnInit {
   top10 :any[] = [];
   constructor(private api: ApiService) { 
     this.api.fetch('get','utilisateurs',null)
-    .then(res => {
-      this.utilisateurs = res;
+    .then((res:any) => {
+      (res.data) ? this.utilisateurs = res.data : this.utilisateurs = [];
       for(let i = 0; i< 10; i++)
       {     
         this.top10[i] = this.utilisateurs[i];

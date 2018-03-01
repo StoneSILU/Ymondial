@@ -13,6 +13,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
+import { PronoPageComponent } from './prono-page/prono-page.component';
 
 import { ApiService } from './Services/Api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginPageComponent},
   { path: 'classement', component: RankingPageComponent},
   { path: 'resultat', component: ResultatPageComponent},
+  { path: 'prono/:id', component: PronoPageComponent},
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     RankingPageComponent,
     MaLigueComponent,
     ResultatPageComponent,
+    PronoPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService,{provide: LOCALE_ID, useValue: 'fr-FR' }],
+  providers: [ApiService,{provide: LOCALE_ID, useValue: 'fr-FR' },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

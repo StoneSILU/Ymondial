@@ -11,8 +11,8 @@
       <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
     </div>
   </div>
-   <a *ngIf="!title;" href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Déconnexion"><i class="fa fa-user-times"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Mon compte">
+  <a *ngIf="user" (click)="logout()" href="#" class="w3-bar-item w3-right w3-button w3-hide-small w3-padding-large w3-hover-white" title="Déconnexion"><i class="fa fa-user-times"></i></a>
+  <a  (click)="goToLogin()" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Mon compte">
     <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Mon Compte">
   </a>
  </div>

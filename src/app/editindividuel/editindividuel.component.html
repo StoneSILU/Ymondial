@@ -5,7 +5,7 @@
   <div class="container text-center"> 
 
 
-     <h3>Modification du match</h3>
+     <h3>Modification du match ✎</h3>
 
       
      
@@ -19,27 +19,38 @@
               <img src="../../assets/moyenne{{equipe2_drapeau}}">
               </div>
               <td>&nbsp;</td> 
+            
+          <div class="w3-center">
                <input type="text" class="w7-center" value="{{equipe1_nom}}" class ="btn btn-default btn-sm">
-               
-               <input type="text" class="w7-center" value="{{equipe2_nom}}" class="btn btn-default btn-sm">
-               
-          
+               <input type="text" class="w7-center" value="{{equipe2_nom}}" class ="btn btn-default btn-sm">
+          </div>     
+           
       </div>
       <br>
+      <label class="container text-center">Score</label>
       <div class="container text-center">
-            <input type="number" class="w3-center" value="{{matchs.goals1}}" class ="btn btn-default btn-sm">
-            <input type="number" class="w3-center" value="{{matchs.goals2}}" class ="btn btn-default btn-sm">
+            <input type="number" class="w3-center"  [(ngModel)]="matchs.goals1" class ="btn btn-default btn-sm">
+            <input type="number" class="w3-center" [(ngModel)]="matchs.goals2" class ="btn btn-default btn-sm">
       </div>
       <br>
       <div class="container text-center">      
-            <input type="text" class="w3-center" value="{{matchs.date}}">
+            <input type="text" class="w3-center" [(ngModel)]="matchs.date">
+      </div>
+      <br>
+
+
+      <div class="container text-center">
+        <!-- <button (click)="updateClick()" class="w3-center btn btn-grey"><a routerLink="/editmatch">Mettre à jour</a></button>-->
+             <button (click)="updateClick()" class="w3-center btn btn-grey">Mettre à jour</button>
+             <button (click)="deleteClick()" class="w3-center btn btn-danger">Supprimer</button>
       </div>
 
-</div> 
+
+    </div> 
 
 
 
-
+<!--<a routerLink="/editmatch">X</a>-->
 
 
 

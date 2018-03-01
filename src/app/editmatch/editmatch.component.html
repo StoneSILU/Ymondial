@@ -16,6 +16,7 @@
           <th class="col-xs-1">GOAL 2</th>
           <th class="col-xs-1">Equipe 2</th>
           <th class="col-xs-3">Date</th>
+          <th class="col-xs-3">Phase</th>
         </tr>
       </thead>
 
@@ -27,6 +28,7 @@
           <td class="col-xs-1">{{match.goals2}}</td>
           <td class="col-xs-1">{{match.equipe2_id.nom}}</td>
           <td class="col-xs-3">{{match.date}}</td>
+          <td class="col-xs-3">{{match.phase_id}}</td>
           <td class="col-xs-1">
            <!-- <button (click)="addGroupe()"><a routerLink="/editindividuel">Edit ✎ </a>-->
               <button (click)="addGroupe()"><a routerLink="/editindividuel/{{match._id}}">Edit ✎ </a>   

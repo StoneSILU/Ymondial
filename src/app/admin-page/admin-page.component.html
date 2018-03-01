@@ -29,6 +29,18 @@
 <td>&nbsp;</td>
 
 <div class="container" style="margin-top:70px;">
+	<div class="input-group">
+		<span class="input-group-addon">Phases</span>
+		<select class="form-control" id="sel1" [(ngModel)]="phase_id">
+			<option value="" disabled selected>Choisir une phase</option>
+			<option *ngFor="let phase of phases" value="{{phase._id}}">{{phase.libelle}}</option>
+		</select>
+	</div>
+</div>
+
+<td>&nbsp;</td>
+
+<div class="container" style="margin-top:70px;">
 
 	<input type="datetime-local" name="date" id="date" placeholder="Date" class="form-control" [(ngModel)]="date">
 </div>

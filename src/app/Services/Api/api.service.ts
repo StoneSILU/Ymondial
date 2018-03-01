@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ApiService {
+
   apiRoot = 'http://localhost:3000/';
   constructor(private http: HttpClient) {
 
@@ -20,5 +21,14 @@ export class ApiService {
     });
     return promise;
   }
+
+
+
+
+
+
+
+
+
 
 }

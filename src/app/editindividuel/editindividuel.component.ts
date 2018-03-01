@@ -8,6 +8,7 @@ import { ApiService } from '../Services/Api/api.service';
   styleUrls: ['./editindividuel.component.css']
 })
 export class EditindividuelComponent implements OnInit {
+  _id: any;
   matchs: any;
   nom: string;
   drapeau: string;
@@ -15,38 +16,37 @@ export class EditindividuelComponent implements OnInit {
   match_id: string;
   match;
   equipe1_id: string;
+  equipe2_id: string;
   equipe1_nom: string;
   equipe2_nom: string;
   equipe1_drapeau: string;
   equipe2_drapeau: string;
-  equipe1_but;
+  
   tousLesMatchs;
 
   constructor(private api: ApiService, private route: ActivatedRoute ) {
-  //  constructor(private api: ApiService) {
+
    this.route.params.subscribe(params => this.match_id = params.id );
     this.api.fetch('get', 'matchs/' + this.match_id, null)
-    //this.api.fetch('get', 'matchs', null)
+
     .then((res: any ) => {
           (res.data) ? this.matchs = res.data : this.matchs = [];
           console.log(this.matchs);
        });
+
+
+
+
     this.api.fetch('get','matchs', null)
     .then((res: any) =>{
       console.log(res.data);
-      this.tousLesMatchs = res.data;
-
-      console.log(this.matchs);
-      for(let element of this.matchs){
-        if(this.matchs == element._id){
-          this.equipe1_but = element.goals1;
-        }
-
-      }
-      
+      this.tousLesMatchs = res.data; 
       });
+    
+
+     
     this.api.fetch('get','equipes', null)
-    .then((res: any) =>{
+      .then((res: any) =>{
         this.equipes = res.data;
 
         console.log(this.equipes);
@@ -70,11 +70,29 @@ export class EditindividuelComponent implements OnInit {
         } 
     });
  
-    }
+  }
     
+ deleteClick(){
+    this.api.fetch('delete','matchs/' + this.match_id, { id: this.match_id })
+      .then((res: any ) => {
+          console.log('ta soeur')
+          console.log(res);
+       });
+       
+ }
+
+ updateClick(){
+    this.api.fetch('patch','matchs/' + this.match_id, this.matchs)
+      .then((res: any ) => {
+        console.log('ta soeur')
+        console.log(res);
+     });
+     
+ }
+ 
 
   ngOnInit() {
 
   }
 
-}
+}  

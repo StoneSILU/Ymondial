@@ -21,7 +21,6 @@ export class EditindividuelComponent implements OnInit {
   equipe2_nom: string;
   equipe1_drapeau: string;
   equipe2_drapeau: string;
-  
   tousLesMatchs;
 
   constructor(private api: ApiService, private route: ActivatedRoute ) {
@@ -37,62 +36,52 @@ export class EditindividuelComponent implements OnInit {
 
 
 
-    this.api.fetch('get','matchs', null)
-    .then((res: any) =>{
+    this.api.fetch('get', 'matchs', null)
+    .then((res: any) => {
       console.log(res.data);
-      this.tousLesMatchs = res.data; 
+      this.tousLesMatchs = res.data;
       });
-    
 
-     
-    this.api.fetch('get','equipes', null)
-      .then((res: any) =>{
+      this.api.fetch('get', 'equipes', null)
+      .then((res: any) => {
         this.equipes = res.data;
 
         console.log(this.equipes);
-        for(let element of this.equipes){
-          if(this.matchs.equipe1_id == element._id){
+        for (const element of this.equipes){
+          if (this.matchs.equipe1_id === element._id) {
             this.equipe1_nom = element.nom;
           }
-          if(this.matchs.equipe2_id == element._id){
+          if (this.matchs.equipe2_id === element._id) {
             this.equipe2_nom = element.nom;
           }
         }
 
         console.log(this.equipes);
-        for(let element of this.equipes){
-          if(this.matchs.equipe1_id == element._id){
+        for (const element of this.equipes) {
+          if (this.matchs.equipe1_id === element._id) {
             this.equipe1_drapeau = element.drapeau;
           }
-          if(this.matchs.equipe2_id == element._id){
+          if (this.matchs.equipe2_id === element._id) {
             this.equipe2_drapeau = element.drapeau;
           }
-        } 
+        }
     });
- 
   }
-    
- deleteClick(){
-    this.api.fetch('delete','matchs/' + this.match_id, { id: this.match_id })
+
+ deleteClick() {
+    this.api.fetch('delete', 'matchs/' + this.match_id, { id: this.match_id })
       .then((res: any ) => {
-          console.log('ta soeur')
-          console.log(res);
        });
-       
  }
 
- updateClick(){
-    this.api.fetch('patch','matchs/' + this.match_id, this.matchs)
+ updateClick() {
+    this.api.fetch('patch', 'matchs/' + this.match_id, this.matchs)
       .then((res: any ) => {
-        console.log('ta soeur')
-        console.log(res);
      });
-     
  }
- 
 
   ngOnInit() {
 
   }
 
-}  
+}

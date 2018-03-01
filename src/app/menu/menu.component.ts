@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '../Classes/user';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,16 +7,8 @@ import { User } from '../Classes/user';
 })
 export class MenuComponent implements OnInit {
 
-  @Input() user: User;
-  constructor(private router: Router) { }
+  constructor() { }
 
-  goToLogin() {
-    this.router.navigate(['login']);
-  }
-
-  logout () {
-    console.log('logout');
-  }
   ngOnInit() {
   }
 

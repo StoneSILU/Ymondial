@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h3>Liste des matchs en cours</h3>
+
+    <td>&nbsp;</td>
+
+
+    <table class="points_table">
+      <thead>
+        <tr>
+          <th class="col-xs-1">Match</th>
+          <th class="col-xs-1">Equipe 1</th>
+          <th class="col-xs-1">GOAL 1</th>
+          <th class="col-xs-1">GOAL 2</th>
+          <th class="col-xs-1">Equipe 2</th>
+          <th class="col-xs-3">Date</th>
+          <th class="col-xs-3">Phase</th>
+        </tr>
+      </thead>
+
+      <tbody class="points_table_scrollbar">
+        <tr class="odd" *ngFor="let match of matchs;let i = index;">
+          <td class="col-xs-1">{{i+1}}</td>
+          <td class="col-xs-1">{{match.equipe1_id.nom}}</td>
+          <td class="col-xs-1">{{match.goals1}}</td>
+          <td class="col-xs-1">{{match.goals2}}</td>
+          <td class="col-xs-1">{{match.equipe2_id.nom}}</td>
+          <td class="col-xs-3">{{match.date}}</td>
+          <td class="col-xs-3">{{match.phase_id}}</td>
+          <td class="col-xs-1">
+           <!-- <button (click)="addGroupe()"><a routerLink="/editindividuel">Edit ✎ </a>-->
+              <button (click)="addGroupe()"><a routerLink="/editindividuel/{{match._id}}">Edit ✎ </a>   
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <button (click)="ajout()" class="w3-left btn btn-grey">
+      <a routerLink="/admin-page">Nouveau match</a>
+    </button>
+
+
+  </div>

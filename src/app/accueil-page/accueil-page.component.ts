@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
-import { User } from '../Classes/user';
 
 @Component({
   selector: 'app-accueil-page',
@@ -8,21 +7,15 @@ import { User } from '../Classes/user';
   styleUrls: ['./accueil-page.component.css']
 })
 export class AccueilPageComponent implements OnInit {
-  title = 'Prono Football School';
-  cName = 'toto';
-  token: string;
-  user: User;
-  constructor(private api: ApiService) {
+title = 'Prono Football School';
+  constructor(private api: ApiService) { 
+  	this.api.fetch('get', 'matchs', null)
+      .then(res => {
+        console.log(res[0].equipe1_id.nom);
+      });
   }
 
-
   ngOnInit() {
-    console.log('OnInit');
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    if (user) {
-      this.user = new User(user.user);
-    }
-    console.log(this.user);
   }
 
 }

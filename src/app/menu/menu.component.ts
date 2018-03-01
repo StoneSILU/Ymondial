@@ -19,7 +19,6 @@ export class MenuComponent implements OnInit {
     console.log('logout');
   }
   ngOnInit() {
-    console.log((this.user) ? 'user' : 'pas duser');
   }
 
 }

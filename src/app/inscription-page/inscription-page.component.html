@@ -1,54 +1,52 @@
 <div class="container">
-    <form class="form-horizontal" role="form">
-        <h2>Inscription</h2>
-        <div class="form-group">
-            <label for="lastName" class="col-sm-3 control-label">Nom</label>
-            <div class="col-sm-9">
-                <input type="text" name="lastName" id="lastName" placeholder="Nom" class="form-control" autofocus [(ngModel)]="nom">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="firstName" class="col-sm-3 control-label">Prenom</label>
-            <div class="col-sm-9">
-                <input type="text" name="firstName" id="firstName" placeholder="Prenom" class="form-control" autofocus [(ngModel)]="prenom">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-9">
-                <input type="email" name="email" id="email" placeholder="Email" class="form-control" [(ngModel)]="email">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Mot de passe</label>
-            <div class="col-sm-9">
-                <input type="password" name="password" id="password" placeholder="Mot de passe" class="form-control" [(ngModel)]="password">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="equipe" class="col-sm-3 control-label">Quel sera selon vous l'équipe qui remportera la compétition ?</label>
-            <div class="col-sm-9 col-sm-offset-3">
-                <select name="equipe" [(ngModel)]="choix_equipe_id" id="equipe">
-                    <!-- <option selected value="">Choisissez votre équipe gagnante </option> -->
-                    <option *ngFor="let equipe of equipes" [value]="equipe._id">{{equipe.nom}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="buteur" class="col-sm-3 control-label">Quel sera selon vous le meilleur buteur de la compétition ?</label>
-            <div class="col-sm-9 col-sm-offset-3">
-                <select [(ngModel)]="choix_buteur_id" name="buteur" id="buteur">
-                    <!-- <option selected value="">Choisissez votre meilleur buteur </option> -->
-                    <option *ngFor="let joueur of buteurs" [value]="joueur._id">{{joueur.nom}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-9 col-sm-offset-3">
-                <button (click)="register()" class="btn btn-primary btn-block">S'inscrire</button>
-            </div>
-        </div>
-    </form>
-    <!-- /form -->
-</div>
-<!-- ./container -->
+            <form class="form-horizontal" role="form">
+                <h2>Inscription</h2>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Nom</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="lastName" id="lastName" placeholder="Nom" class="form-control" autofocus [(ngModel)]="nom">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Prenom</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="firstName" id="firstName" placeholder="Prenom" class="form-control" autofocus [(ngModel)]="prenom">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control" [(ngModel)]="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Mot de passe</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password" id="password" placeholder="Mot de passe" class="form-control" [(ngModel)]="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="equipe" class="col-sm-3 control-label">Quel sera selon vous l'équipe qui remportera la compétition ?</label>
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <select name="equipe" [(ngModel)]="choix_equipe_id" id="equipe">
+                                <option selected value="">Choisissez votre équipe gagnante </option>
+                                <option  *ngFor="let equipe of equipes" value="{{equipe._id}}">{{equipe.nom}}</option>
+                            </select>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="buteur" class="col-sm-3 control-label">Quel sera selon vous le meilleur buteur de la compétition ?</label>
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <select [(ngModel)]="choix_buteur_id" name="buteur"  id="buteur">
+                                    <option selected value="">Choisissez votre meilleur buteur </option>
+                                    <option  *ngFor="let joueur of buteurs" value="{{joueur._id}}">{{joueur.nom}}</option>
+                                </select>                            
+                            </div>
+                        </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button (click)="register()" class="btn btn-primary btn-block">S'inscrire</button>
+                    </div>
+                </div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->

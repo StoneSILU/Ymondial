@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { AccueilPageComponent } from './accueil-page/accueil-page.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,8 +15,9 @@ import { InscriptionPageComponent } from './inscription-page/inscription-page.co
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
 
+import { TokenInterceptor } from './Services/Interceptors/token.interceptor';
+import { AuthenticationService } from './Services/Authentication/authentication.service';
 import { ApiService } from './Services/Api/api.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -45,12 +48,19 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
     HttpModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService],
+  providers: [
+    ApiService,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

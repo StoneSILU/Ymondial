@@ -8,11 +8,7 @@ import { ApiService } from '../Services/Api/api.service';
 })
 export class AccueilPageComponent implements OnInit {
 title = 'Prono Football School';
-  constructor(private api: ApiService) { 
-  	this.api.fetch('get', 'matchs', null)
-      .then(res => {
-        console.log(res[0].equipe1_id.nom);
-      });
+  constructor(private api: ApiService) {
   }
 
   ngOnInit() {

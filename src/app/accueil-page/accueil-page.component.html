@@ -1,60 +1,29 @@
 <app-menu></app-menu>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
+<app-special-content></app-special-content>
  
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        
-        <app-cadre-match-accueil></app-cadre-match-accueil>
-
-    <!-- End Middle Column -->
-    </div>
+ <div class="container-fluid bg-3 text-center">    
+  <div class="row">
+    <div class="w3-col m8">
+    	 <h3>Les rencontres à venir</h3><br>
+		<app-cadre-match-accueil></app-cadre-match-accueil>
+		
+	</div>
+		<div class="col-sm-4">
+				<app-ma-ligue></app-ma-ligue>
+				<br>
+			<div class="w3-card w3-round w3-center" >
+        		<div class="w3-container">
+		        	<p><b>Mes derniers Pronostics</b></p>
+		          <p><i class="fa fa-check w3-green"></i></p>
+		          <p><i class="fa fa-check w3-green"></i></p>
+		          <p><i class="fa fa-close w3-red"></i></p>
+		          <p><b><a href="" style="color:black;">Voir tous mes resultats</a></b></p>
+            	</div>
+      		</div>
+			  <br>
+			  
+    		<app-mini-classement-accueil></app-mini-classement-accueil>
+  		</div>
 </div>
-    
-    <!-- Right Column -->
-    <div class="w3-col m5">
-
-    	<div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-        	<p><b>Mes dernières rencontres</b></p>
-         
-        </div>
-      </div>
-      <br>
-
-
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <app-mini-classement-accueil></app-mini-classement-accueil>
-        </div>
-      </div>
-      <br>
-      
-
-      
-      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>ADS</p>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
-        <p><i class="fa fa-bug w3-xxlarge"></i></p>
-      </div>
-      
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<app-cadre-match-accueil></app-cadre-match-accueil>
-<app-footer></app-footer>
+</div><br>
+<app-footer></app-footer><!-- commentaire -->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
-import { ok } from 'assert';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login-page',
@@ -8,26 +9,31 @@ import { ok } from 'assert';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  users;
-
-  constructor(private api: ApiService) {
-    this.api.fetch('get', 'login', null)
-    .then(res => {
-      this.users = res;
-      console.log(this.users);
-      // tslint:disable-next-line:one-line
-      if (this.users.success = true){
-        // ok
-      }
-      // tslint:disable-next-line:one-line
-      else {
-        // no
-      }
-    });
-
-
+  
+  email:string;
+  password:string;
+  connexion;
+  isVisible:boolean;
+  constructor(private api: ApiService, private router: Router) {
+    
    }
 
+   login(){
+     this.api.fetch('post', 'auth/login', {email: this.email, password: this.password})
+    .then(res => {
+      this.connexion = res;
+      console.log(this.connexion.success);
+      console.log(res);
+      if (this.connexion.success == true){
+        this.router.navigate(['/']);
+        this.isVisible = false;
+      } else {
+        this.isVisible = true;
+      }
+    });
+      
+    
+   }
 
   ngOnInit() {
   }

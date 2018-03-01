@@ -6,17 +6,28 @@ import { AccueilPageComponent } from './accueil-page/accueil-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadreMatchAccueilComponent } from './cadre-match-accueil/cadre-match-accueil.component';
 import { FooterComponent } from './footer/footer.component';
+import { SpecialContentComponent } from './special-content/special-content.component';
 import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-classement-accueil.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RankingPageComponent } from './ranking-page/ranking-page.component';
+import { ProfilPageComponent } from './profil-page/profil-page.component';
 
 import { ApiService } from './Services/Api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MaLigueComponent } from './ma-ligue/ma-ligue.component';
+
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
-  { path: 'admin', component: AdminPageComponent },
+  { path: 'inscription', component: InscriptionPageComponent },
+  { path: 'login', component: LoginPageComponent},
+  { path: 'classement', component: RankingPageComponent},
+  { path: 'profil', component: ProfilPageComponent},
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -29,13 +40,20 @@ const appRoutes: Routes = [
     FooterComponent,
     MiniClassementAccueilComponent,
     AdminPageComponent,
+    SpecialContentComponent,
+    InscriptionPageComponent,
+    LoginPageComponent,
+    RankingPageComponent,
+    MaLigueComponent,
+    ProfilPageComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

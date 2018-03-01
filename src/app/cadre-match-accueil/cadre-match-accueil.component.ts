@@ -9,15 +9,32 @@ import {Router} from '@angular/router';
 })
 export class CadreMatchAccueilComponent implements OnInit {
   rencontres: any;
-
+  phase;
   constructor(private api: ApiService) {
-   this.api.fetch('get', 'matchs', null)
+    
+    this.api.fetch('get', 'phases/getcurrent',null).then((phase:any) =>{
+      this.phase= phase.data[0];
+      console.log("phs",this.phase);
+      this.api.fetch('get', 'matchs?phase_id='+this.phase._id, null)
       .then((res: any) => {
-          (res.data) ? this.rencontres = res.data : this.rencontres = [];
-          console.log(this.rencontres);
+          if(res.data){
+            this.rencontres = res.data;
+            this.rencontres.forEach(match => {
+              this.api.fetch('get', 'pronos?match_id='+match._id +'&utilisateur_id=5a8bfd37d3d7ad0a4732cfc1', null).then(
+              (prono:any) =>{
+                if(prono.data.length > 0){
+                  match.prono = prono.data[0];
+                }
+              });
+            });
+          }else{ 
+            this.rencontres = [];
+          }
+          console.log("rencontre",this.rencontres);
       });
+    });
 
-    }
+  }
 
   ngOnInit() {
 

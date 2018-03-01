@@ -26,6 +26,24 @@
                     </div>
                 </div>
                 <div class="form-group">
+                        <label for="equipe" class="col-sm-3 control-label">Quel sera selon vous l'équipe qui remportera la compétition ?</label>
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <select name="equipe" [(ngModel)]="choix_equipe_id" id="equipe">
+                                <option selected value="">Choisissez votre équipe gagnante </option>
+                                <option  *ngFor="let equipe of equipes" value="{{equipe._id}}">{{equipe.nom}}</option>
+                            </select>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="buteur" class="col-sm-3 control-label">Quel sera selon vous le meilleur buteur de la compétition ?</label>
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <select [(ngModel)]="choix_buteur_id" name="buteur"  id="buteur">
+                                    <option selected value="">Choisissez votre meilleur buteur </option>
+                                    <option  *ngFor="let joueur of buteurs" value="{{joueur._id}}">{{joueur.nom}}</option>
+                                </select>                            
+                            </div>
+                        </div>
+                <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <button (click)="register()" class="btn btn-primary btn-block">S'inscrire</button>
                     </div>

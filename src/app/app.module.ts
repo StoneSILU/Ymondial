@@ -18,9 +18,11 @@ import { RankingPageComponent } from './ranking-page/ranking-page.component';
 import { TokenInterceptor } from './Services/Interceptors/token.interceptor';
 import { AuthenticationService } from './Services/Authentication/authentication.service';
 import { ApiService } from './Services/Api/api.service';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PronoPageComponent } from './prono-page/prono-page.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
   { path: 'classement', component: RankingPageComponent},
-  { path: '**', redirectTo: 'accueil' },
+  { path: 'prono/:id', component: PronoPageComponent},
+  { path: '**', redirectTo: 'accueil' }
 ];
 
 @NgModule({
@@ -38,6 +41,7 @@ const appRoutes: Routes = [
     MenuComponent,
     CadreMatchAccueilComponent,
     FooterComponent,
+    PronoPageComponent,
     MiniClassementAccueilComponent,
     AdminPageComponent,
     SpecialContentComponent,

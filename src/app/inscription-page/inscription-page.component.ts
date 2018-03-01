@@ -12,17 +12,32 @@ export class InscriptionPageComponent implements OnInit {
   prenom:string;
   email:string;
   password:string;
+  choix_equipe_id:string;
+  choix_buteur_id:string;
   inscription;
-  constructor(private api: ApiService, private router: Router) { }
+  buteurs;
+  equipes
+  constructor(private api: ApiService, private router: Router) { 
+    this.api.fetch('get','buteurs',null)
+    .then((res: any)=>{
+      (res.data) ? this.buteurs = res.data : this.buteurs = [];
+    })
+    this.api.fetch('get','equipes', null)
+    .then((res: any)=>{
+      (res.data) ? this.equipes = res.data : this.equipes = [];
+    })
+  }
 
   register(){
-    this.api.fetch('post', 'auth/register',{nom: this.nom, prenom: this.prenom, email: this.email, password: this.password})
-    .then(res =>{
-      this.inscription = res;
-      console.log(this.inscription.success);
-      if(this.inscription.success == true){
-        this.router.navigate(['/login']);
-      }
+    console.log(this.choix_equipe_id);
+    console.log(this.choix_buteur_id);
+    this.api.fetch('post', 'auth/register',{nom: this.nom, prenom: this.prenom, email: this.email, password: this.password, choix_equipe_id: this.choix_equipe_id, choix_buteur_id: this.choix_buteur_id })
+    .then((res: any) =>{
+     window.alert("Inscription réussie");
+     this.router.navigate(['/login']);
+    })
+    .catch(err =>{
+      alert("Echec de l'inscription, ce mail est existe déjà");
     })
   }
 

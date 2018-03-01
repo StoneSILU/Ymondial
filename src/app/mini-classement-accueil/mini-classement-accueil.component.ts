@@ -14,4 +14,17 @@ export class MiniClassementAccueilComponent implements OnInit {
     console.log('name : ' + name);
   }
 
+  constructor(private api: ApiService) {
+    this.api.fetch('get', 'utilisateurs', null)
+      .then((res: any) => {
+        let utilisateurs;
+        const usersToSave = [];
+        (res.data) ? utilisateurs = res.data : utilisateurs = [];
+        for (let i = 0; i < 10; i++) {
+          usersToSave[i] = new User(utilisateurs[i]);
+        }
+        this.data = usersToSave;
+      });
+  }
+
 }

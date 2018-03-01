@@ -51,8 +51,8 @@ export class CadreMatchAccueilComponent implements OnInit {
   }
 
   createUrl(path, id = '') {
-        return path + id;
-      }
+    return path + id;
+  }
 
 
 

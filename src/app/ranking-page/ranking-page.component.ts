@@ -11,8 +11,8 @@ export class RankingPageComponent implements OnInit {
   utilisateurs;
   constructor(private api: ApiService) { 
     this.api.fetch('get','utilisateurs',null)
-    .then(res => {
-      this.utilisateurs = res;
+    .then((res: any)=> {
+      (res.data) ? this.utilisateurs = res.data : this.utilisateurs = [];
     })
   }
 

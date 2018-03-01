@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -14,6 +15,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
+import { PronoPageComponent } from './prono-page/prono-page.component';
 
 import { TokenInterceptor } from './Services/Interceptors/token.interceptor';
 import { AuthenticationService } from './Services/Authentication/authentication.service';
@@ -22,16 +24,16 @@ import { ApiService } from './Services/Api/api.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { PronoPageComponent } from './prono-page/prono-page.component';
-
+import { ResultatPageComponent } from './resultat-page/resultat-page.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
   { path: 'classement', component: RankingPageComponent},
+  { path: 'resultat', component: ResultatPageComponent},
   { path: 'prono/:id', component: PronoPageComponent},
-  { path: '**', redirectTo: 'accueil' }
+  { path: '**', redirectTo: 'accueil' },
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     SpecialContentComponent,
     InscriptionPageComponent,
     LoginPageComponent,
-    RankingPageComponent
+    RankingPageComponent,
+    ResultatPageComponent,
   ],
   imports: [
     BrowserModule,

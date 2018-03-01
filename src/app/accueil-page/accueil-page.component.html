@@ -1,4 +1,4 @@
-<app-menu></app-menu>
+<app-menu [user]="user"></app-menu>
 <app-special-content></app-special-content>
 
 <div class="container-fluid bg-3 text-center">
@@ -31,7 +31,7 @@
 					</p>
 				</div>
 			</div>
-			<app-mini-classement-accueil [name]="(user)?'Ma Ligue':'Le Top 10'"></app-mini-classement-accueil>
+			<app-mini-classement-accueil [name]="(user && user.groupe > 0)?'Ma Ligue':'Le Top 10'"></app-mini-classement-accueil>
 		</div>
 	</div>
 </div>

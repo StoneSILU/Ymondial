@@ -17,8 +17,7 @@ export class AuthenticationService {
     return this.http.post('http://localhost:3000/auth/login', { email: email, password: password })
       .map((response: any) => {
         const respons = JSON.parse(response._body);
-
-        if (!respons.hasError) {
+        if (!respons.hasErrors) {
 
           this.token = respons.data.token;
           localStorage.setItem('currentUser', JSON.stringify({ user: respons.data.user, token: respons.data.token }));

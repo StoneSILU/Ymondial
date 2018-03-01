@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/Api/api.service';
+import { AuthenticationService } from '../Services/Authentication/authentication.service';
 import {Router} from '@angular/router';
 
 
@@ -9,30 +10,24 @@ import {Router} from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  
-  email:string;
-  password:string;
+
+  email: string;
+  error: string;
+  password: string;
   connexion;
-  isVisible:boolean;
-  constructor(private api: ApiService, private router: Router) {
-    
+  isVisible: boolean;
+  constructor(private auth: AuthenticationService, private router: Router) {
    }
 
-   login(){
-     this.api.fetch('post', 'auth/login', {email: this.email, password: this.password})
-    .then(res => {
-      this.connexion = res;
-      console.log(this.connexion.success);
-      console.log(res);
-      if (this.connexion.success == true){
-        this.router.navigate(['/']);
-        this.isVisible = false;
-      } else {
-        this.isVisible = true;
-      }
-    });
-      
-    
+   login() {
+     this.auth.login(this.email, this.password)
+     .subscribe(result => {
+         if (result === true) {
+           this.router.navigate(['/']);
+         } else {
+            alert('Invalid Credentials');
+         }
+       });
    }
 
   ngOnInit() {

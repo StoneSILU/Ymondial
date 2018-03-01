@@ -5,11 +5,13 @@ export class User {
     prenom: string;
     nom: string;
 
-    constructor(_id: string, prenom: string, nom: string, email: string, password: string) {
-        this._id = _id;
-        this.prenom = prenom;
-        this.nom = nom;
-        this.email = email;
-        this.password = password;
+    constructor(data: any) {
+        if (data) {
+            for (let property in data) {
+                if (data.hasOwnProperty(property)) {
+                    this[property] = data[property];
+                }
+            }
+        }
     }
 }

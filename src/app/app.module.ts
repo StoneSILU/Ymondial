@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { AccueilPageComponent } from './accueil-page/accueil-page.component';
 import { MenuComponent } from './menu/menu.component';
@@ -11,19 +13,25 @@ import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-c
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RankingPageComponent } from './ranking-page/ranking-page.component';
 
+import { TokenInterceptor } from './Services/Interceptors/token.interceptor';
+import { AuthenticationService } from './Services/Authentication/authentication.service';
 import { ApiService } from './Services/Api/api.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PronoPageComponent } from './prono-page/prono-page.component';
 
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent},
-  { path: '**', redirectTo: 'accueil' },
+  { path: 'classement', component: RankingPageComponent},
+  { path: 'prono/:id', component: PronoPageComponent},
+  { path: '**', redirectTo: 'accueil' }
 ];
 
 @NgModule({
@@ -33,21 +41,30 @@ const appRoutes: Routes = [
     MenuComponent,
     CadreMatchAccueilComponent,
     FooterComponent,
+    PronoPageComponent,
     MiniClassementAccueilComponent,
     AdminPageComponent,
     SpecialContentComponent,
     InscriptionPageComponent,
     LoginPageComponent,
+    RankingPageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
     HttpModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService],
+  providers: [
+    ApiService,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from '../Services/Api/api.service';
+import { User } from '../Classes/user';
 
 @Component({
   selector: 'app-mini-classement-accueil',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-classement-accueil.component.css']
 })
 export class MiniClassementAccueilComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() name: string;
+  @Input() data: Array<User>;
   ngOnInit() {
+    console.log('name : ' + name);
   }
 
 }

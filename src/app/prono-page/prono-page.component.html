@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+<app-special-content></app-special-content>
+
+<div class="pronoContent">
+  <h2><img src="../../assets/moyenne{{leMatch.equipe1_id.drapeau}}">{{leMatch.equipe1_id.nom}} - {{leMatch.equipe2_id.nom}}<img src="../../assets/moyenne{{leMatch.equipe2_id.drapeau}}"></h2>
+  <h4>({{leMatch.date | date:"dd/MM/yyyy 'à' h:mm" }})</h4>
+
+  <div class="scoreZone">
+    <label>Choisir le score :</label>
+    <input type="text" name="scoreEquipeA" #scoreEquipeA [(ngModel)]="oldProno.goals1"/> - <input type="text" name="scoreEquipeB" #scoreEquipeB [(ngModel)]="oldProno.goals2"/>
+  </div>
+  
+  <div *ngIf="isFuturMatch();else disabledContent">
+    <button class="btn btn-default validButton" (click)="onPronoSubmit(scoreEquipeA.value,scoreEquipeB.value)">Valider le Pronostic</button>
+  </div>
+
+  <ng-template #disabledContent>
+    <button disabled="disabled" class="validButton btn btn-default">Le match est déja passé</button>
+  </ng-template>
+  
+</div>

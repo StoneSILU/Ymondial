@@ -7,22 +7,21 @@ import { ApiService } from '../Services/Api/api.service';
   styleUrls: ['./cadre-match-accueil.component.css']
 })
 export class CadreMatchAccueilComponent implements OnInit {
-	rencontres;
+  rencontres;
 
-  constructor(private api: ApiService) { 
-  
-   this.api.fetch('get', 'matchs', null)
+  constructor(private api: ApiService) {
+
+    this.api.fetch('get', 'matchs', null)
       .then(res => {
-      	 this.rencontres = res;
-      	 console.log(this.rencontres);
+        this.rencontres = res;
+        console.log(this.rencontres);
       });
-
-    }
-
-  ngOnInit() {
 
   }
 
+    ngOnInit() {}
 
-
-}
+    createUrl(path, id = '') {
+      return path + id;
+    }
+  }

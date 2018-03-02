@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -26,14 +25,14 @@ import { ApiService } from './Services/Api/api.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ResultatPageComponent } from './resultat-page/resultat-page.component';
+
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'classement', component: RankingPageComponent },
-  { path: 'resultat', component: ResultatPageComponent },
+  // { path: 'resultat', component: ResultatPageComponent },
   { path: 'prono/:id', component: PronoPageComponent },
   { path: 'admin', component: AdminPageComponent },
   // { path: 'newmatch', component: NewmatchPageComponent },
@@ -56,7 +55,7 @@ const appRoutes: Routes = [
     InscriptionPageComponent,
     LoginPageComponent,
     RankingPageComponent,
-    ResultatPageComponent,
+    // ResultatPageComponent,
     EditindividuelComponent,
     EditmatchComponent
   ],

@@ -6,10 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-classement-accueil.component.css']
 })
 export class MiniClassementAccueilComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+ngOnInit() {}
 }

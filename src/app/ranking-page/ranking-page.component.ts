@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/Api/api.service';
 
 @Component({
   selector: 'app-ranking-page',
@@ -8,15 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class RankingPageComponent implements OnInit {
 
   utilisateurs;
-  constructor(private api: ApiService) { 
-    this.api.fetch('get','utilisateurs',null)
-    .then(res => {
-      this.utilisateurs = res;
-    })
+  constructor(private api: ApiService) {
+    this.api.fetch('get', 'utilisateurs', null)
+    .then((res: any) => {
+      (res.data) ? this.utilisateurs = res.data : this.utilisateurs = [];
+    });
   }
 
-  addGroupe(id){
-    
+  addGroupe(id) {
   }
 
   ngOnInit() {

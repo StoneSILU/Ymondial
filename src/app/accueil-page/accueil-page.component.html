@@ -1,27 +1,38 @@
-
-<app-menu></app-menu>
+<app-menu [user]="user"></app-menu>
 <app-special-content></app-special-content>
- 
  <div class="container-fluid bg-3 text-center">    
   <div class="row">
-    <div class="w3-col m8">
+    <div class="col-sm-8">
     	 <h3>Les rencontres à venir</h3><br>
-		<app-cadre-match-accueil></app-cadre-match-accueil>
+		<app-cadre-match-accueil user='user'></app-cadre-match-accueil>
 		
 	</div>
 		<div class="col-sm-4">
-			<div class="w3-card w3-round w3-center" >
-        		<div class="w3-container">
-		        	<p><b>Mes derniers Pronostics</b></p>
-		          <p><i class="fa fa-check w3-green"></i></p>
-		          <p><i class="fa fa-check w3-green"></i></p>
-		          <p><i class="fa fa-close w3-red"></i></p>
-		          <p><b><a href="" style="color:black;">Voir tous mes resultats</a></b></p>
-            	</div>
-      		</div>
-      		<br>
-    		<app-mini-classement-accueil></app-mini-classement-accueil>
-  		</div>
+			<div class="w3-card w3-round w3-center">
+				<div class="w3-container">
+					<p>
+						<b>Mes derniers Pronostics</b>
+					</p>
+					<p>
+						<i class="fa fa-check w3-green"></i>
+					</p>
+					<p>
+						<i class="fa fa-check w3-green"></i>
+					</p>
+					<p>
+						<i class="fa fa-close w3-red"></i>
+					</p>
+					<p>
+						<b>
+							<a href="" style="color:black;">Voir tous mes resultats</a>
+						</b>
+					</p>
+				</div>
+			</div>
+			<app-mini-classement-accueil [name]="(user && user.groupe > 0)?'Ma Ligue':'Le Top 10'"></app-mini-classement-accueil>
+		</div>
+	</div>
 </div>
-</div><br>
-<app-footer></app-footer><!-- commentaire -->
+<br>
+<app-footer></app-footer>
+<!-- commentaire -->

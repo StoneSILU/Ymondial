@@ -1,70 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../Services/Api/api.service';
-
+import { Match } from '../Classes/match';
 @Component({
   selector: 'app-editindividuel',
   templateUrl: './editindividuel.component.html',
   styleUrls: ['./editindividuel.component.css']
 })
 export class EditindividuelComponent implements OnInit {
-  _id: any;
-  matchs: any;
-  nom: string;
-  drapeau: string;
-  equipes: any;
+  match: Match;
   match_id: string;
-  match;
-  equipe1_id: string;
-  equipe2_id: string;
-  equipe1_nom: string;
-  equipe2_nom: string;
-  equipe1_drapeau: string;
-  equipe2_drapeau: string;
-  tousLesMatchs;
 
   constructor(private api: ApiService, private route: ActivatedRoute ) {
 
    this.route.params.subscribe(params => this.match_id = params.id );
+   console.log('match_id : ' + this.match_id);
     this.api.fetch('get', 'matchs/' + this.match_id, null)
-
-    .then((res: any ) => {
-          (res.data) ? this.matchs = res.data : this.matchs = [];
-          console.log(this.matchs);
+      .then((res: any ) => {
+        if (res.data) {
+          this.match = new Match(res.data);
+        } else {
+          this.match = new Match({});
+        }
        });
 
-
-
-
-    this.api.fetch('get', 'matchs', null)
-    .then((res: any) => {
-      console.log(res.data);
-      this.tousLesMatchs = res.data;
-      });
-
-      this.api.fetch('get', 'equipes', null)
-      .then((res: any) => {
-        this.equipes = res.data;
-
-        console.log(this.equipes);
-        for(const element of this.equipes){
-          if (this.matchs.equipe1_id === element._id) {
-            this.equipe1_nom = element.nom;
-          }
-          if (this.matchs.equipe2_id === element._id) {
-            this.equipe2_nom = element.nom;
-          }
-        }
-
-        for (const element of this.equipes){
-          if (this.matchs.equipe1_id === element._id) {
-            this.equipe1_drapeau = element.drapeau;
-          }
-          if (this.matchs.equipe2_id === element._id) {
-            this.equipe2_drapeau = element.drapeau;
-          }
-        }
-    });
   }
 
   deleteClick() {
@@ -74,7 +33,7 @@ export class EditindividuelComponent implements OnInit {
  }
 
  updateClick() {
-    this.api.fetch('patch', 'matchs/' + this.match_id, this.matchs)
+    this.api.fetch('patch', 'matchs/' + this.match_id, this.match)
       .then((res: any ) => {
      });
  }

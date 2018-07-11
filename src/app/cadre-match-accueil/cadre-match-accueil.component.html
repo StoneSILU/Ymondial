@@ -1,9 +1,14 @@
     <div class="w3-card w3-round w3-center" style="padding-bottom:20px;" >
         <div class="w3-container">
-            <div class="col-sm-3" *ngFor="let match of rencontres">
+            <div class="col-sm-3" *ngFor="let match of rencontres ">
               <br>
                     <br>
+                    <p *ngIf="match.prono; else NoProno" style="font-size:9px;width:100%;text-align:left;">pronostic : {{match.prono.goals1}} - {{match.prono.goals2}}</p>
+                    <ng-template #NoProno>
+                        <p style="font-size:9px;width:100%;">&nbsp;</p>
+                    </ng-template>
                     <table class="cadreMatch w3-center">
+
                         <tr>
                             <td class="w3-center"><img src="../../assets/petite{{match.equipe1_id.drapeau}}"></td>
                             <td>&nbsp;</td>
@@ -15,13 +20,12 @@
                             <td class="w3-center">{{match.equipe2_id.nom}}</td>
                         </tr>
                         <tr>
-                            <td colspan="3">Le {{match.date | date:"MM/dd/yyyy 'à' h:mm" }}</td>
+                            <td colspan="3">Le {{match.date | date:'dd LLLL yyyy à HH:mm' }}</td>
                         </tr>
                         <tr>
                             <th class="w3-center" colspan="3">
-                                <form action="pronostic.html">
-                                    <input type="submit" value="Pronostiquer" class ="btn btn-default btn-sm"/>
-                                  </form> 
+                            <a [href]="createUrl('/prono/',match._id)" class ="btn btn-default btn-sm">Pronostiquer</a>
+                            <!-- <button (click)="goToProno(match._id)" class ="btn btn-default btn-sm">Pronostiquer</button> -->
                             </th>
                         </tr>
                     </table>   

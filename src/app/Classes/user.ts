@@ -7,7 +7,7 @@ export class User {
 
     constructor(data: any) {
         if (data) {
-            for (let property in data) {
+            for (const property in data) {
                 if (data.hasOwnProperty(property)) {
                     this[property] = data[property];
                 }

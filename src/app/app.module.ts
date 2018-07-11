@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -13,6 +14,7 @@ import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-c
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+// import { ResultatPageComponent } from './resultat-page/resultat-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
 import { NewmatchPageComponent } from './newmatch-page/newmatch-page.component';
 import { PronoPageComponent } from './prono-page/prono-page.component';
@@ -25,7 +27,6 @@ import { ApiService } from './Services/Api/api.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
@@ -73,7 +74,7 @@ const appRoutes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

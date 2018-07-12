@@ -14,7 +14,9 @@ import { MiniClassementAccueilComponent } from './mini-classement-accueil/mini-c
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+// import { ResultatPageComponent } from './resultat-page/resultat-page.component';
 import { RankingPageComponent } from './ranking-page/ranking-page.component';
+import { NewmatchPageComponent } from './newmatch-page/newmatch-page.component';
 import { PronoPageComponent } from './prono-page/prono-page.component';
 import { EditmatchComponent } from './editmatch/editmatch.component';
 import { EditindividuelComponent } from './editindividuel/editindividuel.component';
@@ -25,15 +27,18 @@ import { ApiService } from './Services/Api/api.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ResultatPageComponent } from './resultat-page/resultat-page.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilPageComponent },
   { path: 'inscription', component: InscriptionPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'classement', component: RankingPageComponent },
-  { path: 'resultat', component: ResultatPageComponent },
+  // { path: 'resultat', component: ResultatPageComponent },
   { path: 'prono/:id', component: PronoPageComponent },
+  { path: 'admin', component: AdminPageComponent },
+  // { path: 'newmatch', component: NewmatchPageComponent },
+  { path: 'editindividuel/:id', component: EditindividuelComponent },
+  { path: 'editmatch', component: EditmatchComponent },
   { path: '**', redirectTo: 'accueil' },
 ];
 
@@ -51,7 +56,7 @@ const appRoutes: Routes = [
     InscriptionPageComponent,
     LoginPageComponent,
     RankingPageComponent,
-    ResultatPageComponent,
+    // ResultatPageComponent,
     EditindividuelComponent,
     EditmatchComponent
   ],
@@ -69,7 +74,7 @@ const appRoutes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

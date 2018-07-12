@@ -6,33 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newmatch-page.component.css']
 })
 export class NewmatchPageComponent implements OnInit {
-  equipes:string[];
+  equipes: string[];
   rencontres = 'france';
 
-  constructor() { 
-     console.log('constructor ran...');
+  constructor() {
+    console.log('constructor ran...');
   }
 
 
   ngOnInit() {
-     console.log('ngOnInit ran...');
-    
-     this.equipes = []
-
+    console.log('ngOnInit ran...');
+    this.equipes = [];
   }
 
-  
-     addEquipe(equipe){
-     console.log(equipe);
-     this.equipes.unshift(equipe);
-     return false;
- }
+  addEquipe(equipe) {
+    console.log(equipe);
+    this.equipes.unshift(equipe);
+    return false;
+  }
 
-  deleteEquipe(equipe){
-     for(let i = 0;i <this.equipes.length;i++){
-       if(this.equipes[i] == equipe){
-         this.equipes.splice(i, 1);
-       }         
-     }    
-  }  
+  deleteEquipe(equipe) {
+    for (let i = 0; i < this.equipes.length; i++) {
+      if (this.equipes[i] === equipe) {
+        this.equipes.splice(i, 1);
+      }
+    }
+  }
 }
